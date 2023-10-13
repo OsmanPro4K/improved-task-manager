@@ -1,0 +1,32 @@
+<div class="d-flex pb-3" *ngIf="!editEnabled">
+  <input
+    class="form-control border border-success rounded-end-0"
+    type="text"
+    #taskInput
+    (keydown.enter)="onEnterPressedDuringAddTask()"
+  />
+  <button class="btn btn-success rounded-start-0" (click)="onAddTaskClicked()">
+    <i class="fa-solid fa-plus"></i>
+  </button>
+</div>
+
+<div class="d-flex pb-3" *ngIf="editEnabled">
+  <input
+    class="form-control border border-primary rounded-end-0"
+    type="text"
+    #editInput
+    (keydown.enter)="onEnterPressedDuringEditTask()"
+  />
+  <button
+    class="btn btn-primary rounded-start-0 rounded-end-0"
+    (click)="onEditConfirmedClicked()"
+  >
+    <i class="fa-solid fa-check"></i>
+  </button>
+  <button
+    class="btn btn-danger rounded-start-0"
+    (click)="onEditCanceledClicked()"
+  >
+    <i class="fa-solid fa-x"></i>
+  </button>
+</div>

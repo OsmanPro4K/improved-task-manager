@@ -1,0 +1,21 @@
+<ul class="list-group">
+  <li
+    class="list-group-item w-75 ms-auto me-auto mb-3 rounded-3 border border-dark"
+    *ngFor="let task of tasks; let i = index"
+  >
+    <div class="d-flex justify-content-between align-items-center">
+      {{ task }}
+      <div>
+        <button class="btn btn-warning me-2" (click)="onEditClicked()" (click)="setIndexNumber(i)">
+          <i class="fa-solid fa-pen-to-square"></i>
+        </button>
+        <button class="btn btn-danger" (click)="onDeleteClicked(i)">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
+    </div>
+  </li>
+</ul>
+<div class="row mt-3">
+  <app-new-task [editEnabled]="shouldEdit" [indexNumber]="indexNumber" (cancelClicked)="onCancelWasClicked()"></app-new-task>
+</div>

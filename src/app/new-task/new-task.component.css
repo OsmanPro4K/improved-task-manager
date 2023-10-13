@@ -1,0 +1,4 @@
+.blur-background {
+  filter: blur(5px); /* Adjust the blur amount as needed */
+  pointer-events: none; /* Make the blurred background non-interactive */
+}
